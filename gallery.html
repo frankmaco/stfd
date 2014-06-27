@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>Stfd Creative</title>
+		<link rel="stylesheet" href="css/main.css">
+		<!-- Magnific Popup core CSS file -->
+		<link rel="stylesheet" href="css/magnific-popup.css">
+	</head>
+	<body>
+		<div id ="wrapper">
+			<header>
+				<h1><a href="index.html">Stratford Creative</a></h1>
+
+				<nav>
+					<ul>
+						<li><a href="about.html">About</a></li>
+						<li class="link_spacing"><a href="events.html">Events</a></li>
+						<li class="link_spacing"><a href="message_board.html">Message Board</a></li>
+						<li class="link_spacing"><a href="gallery.html">Gallery</a></li>
+						<li class="link_spacing"><a href="contact.html">Contact</a></li>
+					</ul>
+				</nav>
+
+			</header>
+
+			<div id = "container">
+				<h2>Gallery</h2>
+
+				<ul class="img-gallery">
+						<li><a class="test-popup-link" href="images/full_size/1_large.jpg"><img class="gallery_pics" src="images/image1.jpg " width="160" height="160" alt = "gallery image1"></a></li>
+						<li><a class="test-popup-link" href="images/full_size/2_large.jpg"><img class="gallery_pics" src="images/image2.jpg " width="160" height="160" alt = "gallery image2"></a></li>
+						<li><a class="test-popup-link" href="images/full_size/3_large.jpg"><img class="gallery_pics" src="images/image3.jpg " width="160" height="160" alt = "gallery image3"></a></li>
+						<li><a class="test-popup-link" href="images/full_size/4_large.jpg"><img class="gallery_pics" src="images/image4.jpg " width="160" height="160" alt = "gallery image5"></a></li>
+						<li><a class="test-popup-link" href="images/full_size/5_large.jpg"><img class="gallery_pics" src="images/image5.jpg " width="160" height="160" alt = "gallery image6"></a></li>
+						<li><a class="test-popup-link" href="images/full_size/6_large.jpg"><img class="gallery_pics" src="images/image6.jpg " width="160" height="160" alt = "gallery image7"></a></li>
+						<li><a class="test-popup-link" href="images/full_size/7_large.jpg"><img class="gallery_pics" src="images/image7.jpg " width="160" height="160" alt = "gallery image1"></a></li>
+						<li><a class="test-popup-link" href="images/full_size/8_large.jpg"><img class="gallery_pics" src="images/image8.jpg " width="160" height="160" alt = "gallery image2"></a></li>
+
+
+					</ul>
+
+			</div><!--	End Container-->
+
+
+
+			<footer>
+				<p>Stfd Creative  info@stfdcreative.com</p>
+				<div id = "bottom_nav">
+				<ul>
+						<li><a href="about.html">About</a></li>
+						<li><a href="events.html">Events</a></li>
+						<li><a href="message_board.html">Message Board</a></li>
+						<li><a href="gallery.html">Gallery</a></li>
+						<li><a href="contact.html">Contact</a></li>
+				</ul>
+				</div>
+			</footer>
+
+		</div><!--	End Wrapper-->
+		<!-- jQuery 1.7.2+ or Zepto.js 1.0+ -->
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+
+		<!-- Magnific Popup core JS file -->
+		<script src="js/jquery.magnific-popup.min.js"></script>
+		<script charset="utf-8">
+			$(document).ready(function() {
+				$('.test-popup-link').magnificPopup({
+					type: 'image',
+					tLoading: 'Loading image #%curr%...',
+					mainClass: 'mfp-img-mobile',
+					gallery: {
+						enabled: true,
+						navigateByImgClick: true,
+						preload: [0,1] // Will preload 0 - before current, and 1 after the current image
+					},
+				});
+			});
+
+		</script>
+	</body>
+</html>

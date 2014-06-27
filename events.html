@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Stfd Creative</title>
+	<link rel="stylesheet" href="css/main.css">
+	<link rel="stylesheet" href="css/clndr.css">
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>		
+	<script src="js/underscore.js"></script>
+	<script src="js/moment.js"></script>
+
+	
+
+</head>
+	<body>
+		<div id ="wrapper">
+			<header>
+				<h1><a href="index.html">Stratford Creative</a></h1>
+
+				<nav>
+					<ul>
+						<li><a href="about.html">About</a></li>
+						<li class="link_spacing"><a href="events.html">Events</a></li>
+						<li class="link_spacing"><a href="message_board.html">Message Board</a></li>
+						<li class="link_spacing"><a href="gallery.html">Gallery</a></li>
+						<li class="link_spacing"><a href="contact.html">Contact</a></li>
+					</ul>
+				</nav>
+
+			</header>
+			<div id = "container">
+				<h2>Events</h2>
+				 <div class="cal2">
+
+					  <script type="text/template" id="full-clndr-template">
+     <div class="controls">
+        <div class="clndr-previous-button">&lsaquo;</div><div class="month"><%= month %> <%= year %></div><div class="clndr-next-button">&rsaquo;</div>
+    </div>
+    <div class="clndr-grid">
+      <div class="days-of-the-week clearfix">
+        <% _.each(daysOfTheWeek, function(day) { %>
+          <div class="header-day"><%= day %></div>
+        <% }); %>
+      </div>
+      <div class="days clearfix">
+        <% _.each(days, function(day) { %>
+          <div class="<%= day.classes %>" id="<%= day.id %>">
+            <span class="day-number"><%= day.day %></span>
+
+
+
+          </div>
+        <% }); %>
+      </div>
+    </div>
+    <div class="event-listing">
+      <div class="event-listing-title">EVENTS THIS MONTH</div>
+      <% _.each(eventsThisMonth, function(event) { %>
+          <a href="<%= event.url %>"><div class="event-item">
+            <div class="event-item-name"><%= event.title %></div>
+            <div class="event-item-location"><%= event.location %></div>
+            <div class="event-item-date"><%= event.startDate %></div>
+          </div></a>
+        <% }); %>
+    </div>
+  </script>
+
+			    </div>
+
+
+			</div><!--	End Container-->
+
+
+
+			<footer>
+			<p>Stfd Creative  info@stfdcreative.com</p>
+				<div id = "bottom_nav">
+				<ul>
+						<li><a href="about.html">About</a></li>
+						<li><a href="events.html">Events</a></li>
+						<li><a href="message_board.html">Message Board</a></li>
+						<li><a href="gallery.html">Gallery</a></li>
+						<li><a href="contact.html">Contact</a></li>
+				</ul>
+				</div>
+			</footer>
+
+		</div><!--	End Wrapper-->
+		<script src="js/clndr.js"></script>
+		<script charset="utf-8">
+
+			var args = [
+			  { startDate: '2014-06-27', endDate: '2014-06-28', title: 'Rage Till Sunrise', location: 'Einsengaurd', url:'http://www.frankfso.com/e1934898.html'},
+			  { startDate: '2014-06-28', endDate: '2014-06-29', title: 'Battle of the bands ', location: 'Sleeping forest', url:'http://www.frankfso.com/e1934899.html'}
+			];
+
+
+			$(document).ready( function() {
+
+			$('.cal2').clndr({
+			  	template: $('#full-clndr-template').html(),
+			    events: args,
+			    multiDayEvents: {
+			      startDate: 'startDate',
+			      endDate: 'endDate'
+			    },
+			    clickEvents: {
+			      click: function(target) {
+			        if(target.events.length) {
+			          var daysContainer = $('.cal2').find('.days-container');
+			          daysContainer.toggleClass('show-events', true);
+			          $('.cal2').find('.x-button').click( function() {
+			            daysContainer.toggleClass('show-events', true);
+			          });
+			        }
+			      }
+			    },
+			    showAdjacentMonths: true,
+			    adjacentDaysChangeMonth: true
+			  });
+
+			});
+		</script>
+	</body>
+</html>
